@@ -43,3 +43,27 @@
 - [ ] routes.
 - [x] rlpatterns.
 - [ ] urls.
+
+## Por que precisamos de um campo csrf_token em nosso formulário de cadastro?
+
+- [ ] Porque é o campo que possui o método que será enviado pelo formulário.
+- [x] Porque o Django precisa validar que aquele formulário está, realmente, sendo enviado por uma aplicação conhecida.
+- [ ] Não precisamos de um campo assim em nosso formulário.
+- [ ] Porque é o campo que possui a rota de destino dos dados do fomulário.
+- [ ] Porque é o campo que contém todas as regras de validação do formulário.
+
+## Qual tag utilizamos para concatenar o conteúdo de uma variável do Python em código HTML?
+
+- [ ] (( )).
+- [ ] {( )}.
+- [x] {{ }}.
+- [ ] {$ $}.
+- [ ] {$ $}.
+
+## Qual tag utilizamos para executar um código Python em páginas HTML?
+
+- [ ] {% %}.
+- [ ] {% %}.
+- [x] {% %}.
+- [ ] (( )).
+- [ ] {$ $}.

@@ -6,4 +6,6 @@
 
 **Na imagem abaixo podemos ver a arquitetura básica de várias apps em um mesmo projeto:**
 
-![Adobe Logo](rId36m1szvjw1.vbe.png "Hover text")
+![Legenda](model.png)
+
+A classe Cat criada no Django é “transformada” em uma tabela no banco de dados.

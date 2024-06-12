@@ -5,11 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listagem de Horário Atual</title>
+    <title>Document</title>
 </head>
 <body>
-<h1>Este é o horário atual do servidor</h1
->
-<h3>{{ horario_atual }}</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Cadastrar">
+</form>
+
 </body>
 </html>
