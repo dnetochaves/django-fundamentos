@@ -24,8 +24,8 @@
 
 ## Qual a importância do parâmetro request?
 
-- [x] É ele quem possui todos os metadados da requisição e sabe o que o client deseja fazer`.
-- [ ] É ele quem possui todos os metadados da requisição e sabe o que o servidor deseja fazer`.
-- [ ] É ele quem possui todos os bancos de dados da requisição e sabe o que o client deseja fazer`.
-- [ ] É ele quem possui todas as rotas da requisição e sabe o que o client deseja fazer`.
-- [ ] É ele quem possui todos os templates da requisição e sabe o que o client deseja fazer`.
+- [x] É ele quem possui todos os metadados da requisição e sabe o que o client deseja fazer.
+- [ ] É ele quem possui todos os metadados da requisição e sabe o que o servidor deseja fazer.
+- [ ] É ele quem possui todos os bancos de dados da requisição e sabe o que o client deseja fazer.
+- [ ] É ele quem possui todas as rotas da requisição e sabe o que o client deseja fazer.
+- [ ] É ele quem possui todos os templates da requisição e sabe o que o client deseja fazer.
