@@ -13,3 +13,19 @@
 - [x] python manage.py runserver.
 - [ ] python manage.py django_runserver.
 - [ ] python manage runserver.
+
+## Qual módulo utilizamos para que uma informação seja exibida quando uma view for executada?
+
+- [x] HttpResponse().
+- [ ] HttpResponse().
+- [] Response().
+- [ ] HttpResponseView().
+- [ ] Http().
+
+## Qual a importância do parâmetro request?
+
+- [x] É ele quem possui todos os metadados da requisição e sabe o que o client deseja fazer`.
+- [ ] É ele quem possui todos os metadados da requisição e sabe o que o servidor deseja fazer`.
+- [ ] É ele quem possui todos os bancos de dados da requisição e sabe o que o client deseja fazer`.
+- [ ] É ele quem possui todas as rotas da requisição e sabe o que o client deseja fazer`.
+- [ ] É ele quem possui todos os templates da requisição e sabe o que o client deseja fazer`.
