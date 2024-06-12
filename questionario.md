@@ -29,3 +29,17 @@
 - [ ] É ele quem possui todos os bancos de dados da requisição e sabe o que o client deseja fazer.
 - [ ] É ele quem possui todas as rotas da requisição e sabe o que o client deseja fazer.
 - [ ] É ele quem possui todos os templates da requisição e sabe o que o client deseja fazer.
+
+## Qual método utilizado para incluir o arquivo de rotas de uma aplicação no arquivo de rotas de um projeto?
+
+- [ ] includes().
+- [ ] path().
+- [x] include().
+- [ ] routes().
+## Qual o nome do array que utilizamos para armazenar as rotas de uma aplicação?
+
+- [ ] patterns.
+- [ ] paths.
+- [ ] routes.
+- [x] rlpatterns.
+- [ ] urls.
