@@ -18,7 +18,7 @@
 
 - [x] HttpResponse().
 - [ ] HttpResponse().
-- [] Response().
+- [ ] Response().
 - [ ] HttpResponseView().
 - [ ] Http().
 
