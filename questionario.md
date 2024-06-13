@@ -69,3 +69,27 @@
 - [x] {% %}.
 - [ ] (( )).
 - [ ] {$ $}.
+
+## Qual arquivo responsável por comportar os models de um projeto Django?
+
+- [ ] settings.py.
+- [ ] entidades.py.
+- [x] models.py.
+- [ ] db.py.
+- [ ] views.py.
+
+## Qual classe herdamos em nosso projeto Django para que um model se "transforme" em uma tabela no banco de dados?
+
+- [ ] modelo.
+- [ ] models.Models.
+- [ ] modelo.Modelo.
+- [ ] models.Modelo.
+- [x] models.Model.
+
+## Qual comando utilizado para realizar as migrações para o banco de dados?
+
+- [ ] python migrate.
+- [x] python manage.py migrate.
+- [ ] python manage.py migration.
+- [ ] python migrates.
+- [ ] python manage.py migrates.

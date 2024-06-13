@@ -11,5 +11,11 @@
 <h1>Este é o horário atual do servidor</h1
 >
 <h3>{{ horario_atual }}</h3>
+
+{% for clientes in cliente %}
+<h1>{{ clientes.nome }}</h1>
+{% endfor %}
+    
+
 </body>
 </html>
