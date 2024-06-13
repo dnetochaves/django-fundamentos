@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load bootstrap4 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Clientes</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <h2>Lista de Clientes</h2>
+        <hr>
+        
+        {% for cliente in object_list %}
+            <li>{{ cliente.nome }}</li>
+            <li>{{ cliente.email }}</li>
+            <li>{{ cliente.data_nascimento }}</li>
+            <li>{{ cliente.profissao }}</li>
+            <hr>
+        {% endfor %}
+            
+    </div>
+</body>
+</html>
