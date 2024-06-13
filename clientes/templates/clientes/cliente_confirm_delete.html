@@ -4,26 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Clientes</title>
+    <title>Remoção de Clientes</title>
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
 </head>
 <body>
     <div class="container">
         <hr>
-        <h2>Lista de Clientes  <a href="{% url 'clientes_form' %}">Novo</a></h2>
+        <h2>Tem certeza que deseja excluir: {{ cliente.nome }}</h2>
         <hr>
         
-        {% for cliente in object_list %}
+       
             <li>{{ cliente.nome }}</li>
             <li>{{ cliente.email }}</li>
             <li>{{ cliente.data_nascimento }}</li>
             <li>{{ cliente.profissao }}</li>
             <hr>
-            <a class="btn btn-info" href="{% url "lista_detail_clientes" cliente.pk  %}">Detalhes</a>  -  <a class="btn btn-danger" href="{% url "delete_clientes" cliente.pk  %}">Deletar</a>
-            <hr>
-            
-        {% endfor %}
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <input class="btn btn-danger" type="submit" value="Sim">
+            </form>
             
     </div>
 </body>

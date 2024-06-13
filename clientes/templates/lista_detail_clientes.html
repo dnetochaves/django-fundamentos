@@ -20,7 +20,8 @@
             <li>{{ cliente.data_nascimento }}</li>
             <li>{{ cliente.profissao }}</li>
             <hr>
-        <a href="{% url "clientes_list" %}">Voltar</a>
+            <a href="{% url "clientes_update" cliente.id %}">Editar</a>
+            <a href="{% url "clientes_list" %}">Voltar</a>
             
     </div>
 </body>
