@@ -1,5 +1,6 @@
  * [Voltar](README.md)
  </hr>
+ 
 # Entendendo o parâmetro request
 
 Quando uma requisição é enviada através do Django, a view recebe um objeto request. Este objeto é de grande importância pois é ele quem possui todos os metadados da requisição.
