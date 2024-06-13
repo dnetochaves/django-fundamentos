@@ -11,16 +11,16 @@
 <body>
     <div class="container">
         <hr>
-        <h2>Lista de Clientes</h2>
+        <h2>{{ cliente.nome }}</h2>
         <hr>
         
-        {% for cliente in object_list %}
-            <li><a href="{% url "lista_detail_clientes" cliente.pk  %}">{{ cliente.nome }}</a></li>
+       
+            <li>{{ cliente.nome }}</li>
             <li>{{ cliente.email }}</li>
             <li>{{ cliente.data_nascimento }}</li>
             <li>{{ cliente.profissao }}</li>
             <hr>
-        {% endfor %}
+        <a href="{% url "clientes_list" %}">Voltar</a>
             
     </div>
 </body>
