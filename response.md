@@ -1,3 +1,6 @@
+ * [Voltar](README.md)
+ </hr>
+ 
 # Entendendo o parâmetro response
 
 Assim como toda view recebe um objeto do tipo request como parâmetro, ela é obrigada a retornar um objeto response. Diferente do request que é criado automaticamente pelo Django, o response é de responsabilidade do programador.

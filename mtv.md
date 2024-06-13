@@ -1,3 +1,5 @@
+ * [Voltar](README.md)
+ </hr>
 # Entendendo o MTV do Django
 
 Agora que já sabemos como criar um projeto e como criar uma app com o Django, já estamos prontos para criar nossa primeira aplicação com o framework. Porém, antes disso, precisamos entender como funciona a arquitetura do framework, o que veremos neste artigo.

@@ -1,5 +1,6 @@
  * [Voltar](README.md)
  <hr>
+ 
 ## Qual comando utilizado para criar um novo projeto Django?
 
 - [ ] python manage.py startapp.

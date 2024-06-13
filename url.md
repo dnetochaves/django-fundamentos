@@ -1,3 +1,5 @@
+ * [Voltar](README.md)
+ </hr>
 # Para quê servem as urls?
 
 As rotas são de fundamental importância para que o usuário consiga executar determinada funcionalidade do sistema. No Django, cada rota é responsável por executar um método na view da aplicação, que exibe alguma informação para o usuário.

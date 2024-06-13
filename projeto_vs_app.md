@@ -1,3 +1,5 @@
+ * [Voltar](README.md)
+ </hr>
 # Projeto vs App
 
 **No Django, um projeto é composto por uma ou várias apps. Cada app possui sua arquitetura e arquivos de models, views e templates. Sendo assim, as apps podem representar aplicações isoladas, porém em um mesmo projeto.**
