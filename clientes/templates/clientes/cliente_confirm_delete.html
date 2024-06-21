@@ -1,31 +1,25 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load bootstrap4 %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remoção de Clientes</title>
-    {% bootstrap_css %}
-    {% bootstrap_javascript jquery='full' %}
-</head>
-<body>
-    <div class="container">
-        <hr>
-        <h2>Tem certeza que deseja excluir: {{ cliente.nome }}</h2>
-        <hr>
-        
-       
-            <li>{{ cliente.nome }}</li>
-            <li>{{ cliente.email }}</li>
-            <li>{{ cliente.data_nascimento }}</li>
-            <li>{{ cliente.profissao }}</li>
-            <hr>
+{% load meus_filtros %}
+{% load humanize %}
 
-            <form action="" method="post">
-                {% csrf_token %}
-                <input class="btn btn-danger" type="submit" value="Sim">
-            </form>
-            
-    </div>
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <hr>
+    <h2>Tem certeza que deseja excluir: {{ cliente.nome }}</h2>
+    <hr>
+    
+   
+        <li>{{ cliente.nome }}</li>
+        <li>{{ cliente.email }}</li>
+        <li>{{ cliente.data_nascimento }}</li>
+        <li>{{ cliente.profissao }}</li>
+        <hr>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger" type="submit" value="Sim">
+        </form>
+        
+</div>
+{% endblock %}

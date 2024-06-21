@@ -120,9 +120,7 @@ LANGUAGES = (
     ("pt", gettext_lazy("Portuguese")),
 )
 
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 TIME_ZONE = "UTC"
 
