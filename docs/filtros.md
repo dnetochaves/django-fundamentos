@@ -1,0 +1,2 @@
+# O que são filtros?
+Os filtros no DTL são responsáveis por alterar a forma que uma informação será exibida. É com esse recurso que conseguimos manipular as informações que serão visualizadas nos templates. Nas próximas aulas veremos quais os principais filtros do DTL e como criar filtros personalizados.
