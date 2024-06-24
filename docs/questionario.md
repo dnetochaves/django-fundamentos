@@ -501,3 +501,92 @@ Partindo do pressuposto que a variável cursos_home possui outros dicionários a
 - [x] Um campo cliente_id_endereco será criado na tabela Endereço.
 - [ ] Um campo cliente_id_endereco será criado na tabela Endereço.
 <hr>
+
+# Qual método devemos sobrescrever no model para alterar a forma como um objeto é exibido através do ORM do Django?
+
+- [x] __str__.
+- [ ] get.
+- [ ] __print__.
+- [ ] print.
+- [ ] str.
+<hr>
+
+# Dado as tabelas Cliente e Pedido, onde um relacionamento 1-N exista entre elas, onde 1 cliente pode realizar vários pedidos, porém 1 pedido só pode estar atrelado a 1 cliente, como fica, a nível de banco de dados, essa relação?
+
+- [x] Um campo cliente_id_pedido será criado na tabela Pedido.
+- [ ] Um campo cliente_id será criado na tabela Pedido.
+- [ ] Uma tabela ClientePedido será criada para armazenar a relação.
+- [ ] Um campo pedido_id será criado na tabela Cliente.
+- [ ] Um campo pedido_id_cliente será criado na tabela Cliente. 
+<hr>
+
+# Qual o nome do campo do ORM do Django responsável por criar um relacionamento NN entre duas entidades?
+
+- [x] ManyToManyField.
+- [ ] ForeignKey.
+- [ ] NtoNField.
+- [ ] ManyToNField.
+- [ ] NToManyField.
+<hr>
+
+# Observe o model Pedido abaixo:
+```
+class Pedido(models.Model):
+    STATUS_CHOICES = (
+        ("P", "Pedido realizado"),
+        ("F", "Fazendo"),
+        ("E", "Saiu para entrega"),
+    )
+    cliente = models.ForeignKey("Cliente", on_delete=models.CASCADE)
+    data_pedido = models.DateTimeField(default=timezone.now)
+    valor = models.FloatField(blank=False, null=False)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, blank=False, null=False)
+    observacoes = models.CharField(max_length=50, null=True, blank=True)
+    produtos = models.ManyToManyField(Produto)
+
+```
+
+## Com o campo "produtos" sendo um relacionamento N-N, qual o nome da tabela "auxiliar" que será criada no BD para armazenar as relações entre as duas entidades?
+- [ ] nome_da_app_produtos_pedido.
+- [ ] nome_da_app_pedidos_produtos.
+- [ ] nome_da_app_pedidos_produto.
+- [x] nome_da_app_pedido_produtos.
+- [ ] nome_da_app_pedido_produto.
+<hr>
+
+## Qual método utilizado para recuperar elementos de uma relação NN no Django?
+- [ ] many_related.
+- [ ] select_related.
+- [ ] related.
+- [x] prefetch_related.
+- [ ] A relação NN não precisa de um método específico.
+<hr>  
+
+## Supondo que a entidade Pedido se relaciona de forma NN com a entidade Produto, com base na query abaixo:
+
+```
+pedidos = Pedido.objects.prefetch_related('produtos').all()
+```
+
+Quantas consultas seriam realizadas para obter todos os dados da relação, supondo que temos 230 registros?
+
+
+- [ ] 3 consultas.
+- [ ] 1 consulta.
+- [ ] 231 consultas.
+- [x] 2 consultas.
+- [ ] 30 consultas.
+<hr>  
+
+
+## Qual método utilizado para recuperar os elementos de uma relação 1N no Django?
+
+
+
+
+- [ ] related`.
+- [ ] A relação 1N não precisa de um método específico.
+- [ ] A relação 1N não precisa de um método específico.
+- [x] select_related`.
+- [ ] many_related`.
+<hr>  

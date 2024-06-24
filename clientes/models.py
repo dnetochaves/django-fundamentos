@@ -43,8 +43,9 @@ class Cliente(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)
     data_nascimento = models.DateField(null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
-    profissao = models.CharField(max_length=50, null=False, blank=False)
+    profissao = models.CharField(max_length=50, null=True, blank=True)
     endereco = models.OneToOneField(to=Endereco, on_delete=models.SET_NULL, null=True)
+    nivel = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.nome} - {self.email}"

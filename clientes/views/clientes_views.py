@@ -8,9 +8,10 @@ from django.views.generic import (
     DetailView,
     DeleteView,
 )
-from .models import Cliente, Endereco
+from ..models import Cliente, Endereco
 from django.urls import reverse_lazy, reverse
-from .forms import ClienteForm, EnderecoForm
+from ..forms.clientes_forms import ClienteForm, EnderecoForm
+from clientes.services.cliente_services import calcular_nivel_cliente
 
 
 # Create your views here.
@@ -26,7 +27,7 @@ def clientes(request):
 class ClienteCreateView(CreateView):
     model = Cliente
     form_class = ClienteForm
-    template_name = "forms_clientes.html"
+    template_name = "clientes/forms_clientes.html"
     success_url = "clientes_list"
 
     def get_context_data(self, **kwargs):
@@ -42,19 +43,25 @@ class ClienteCreateView(CreateView):
             endereco = endereco_form.save()
             cliente = cliente_form.save(commit=False)
             cliente.endereco = endereco
+            cliente = calcular_nivel_cliente(cliente=cliente)
             cliente.save()
             return HttpResponseRedirect(reverse("clientes_list"))
+        return render(
+            request,
+            "clientes/forms_clientes.html",
+            {"form": cliente_form, "endereco_form": endereco_form},
+        )
 
 
 class ClienteListView(ListView):
     model = Cliente
-    template_name = "lista_clientes.html"
+    template_name = "clientes/lista_clientes.html"
 
 
 class ClienteUpdateView(UpdateView):
     model = Cliente
     form_class = ClienteForm
-    template_name = "forms_clientes.html"
+    template_name = "clientes/forms_clientes.html"
     success_url = reverse_lazy("clientes_list")  # "/clientes/clientes_list"
 
     def get_context_data(self, **kwargs):
@@ -62,11 +69,13 @@ class ClienteUpdateView(UpdateView):
         context["form"] = ClienteForm(instance=self.object)
         context["endereco_form"] = EnderecoForm(instance=self.object.endereco)
         return context
-    
+
     def post(self, request, *args, **kwargs):
         cliente = Cliente.objects.get(id=kwargs["pk"])
         cliente_form = ClienteForm(data=request.POST or None, instance=cliente)
-        endereco_form = EnderecoForm(data=request.POST or None, instance=cliente.endereco)
+        endereco_form = EnderecoForm(
+            data=request.POST or None, instance=cliente.endereco
+        )
         if cliente_form.is_valid() and endereco_form.is_valid():
             endereco = endereco_form.save()
             cliente = cliente_form.save(commit=False)
@@ -74,19 +83,26 @@ class ClienteUpdateView(UpdateView):
             cliente.save()
             return HttpResponseRedirect(reverse("clientes_list"))
 
-    
-
 
 class ClienteDetailView(DetailView):
     model = Cliente
     fields = "__all__"
-    template_name = "lista_detail_clientes.html"
+    template_name = "clientes/lista_detail_clientes.html"
     context_object_name = "cliente"
 
 
 class ClienteDeleteView(DeleteView):
     model = Cliente
     success_url = reverse_lazy("clientes_list")  # "/clientes/clientes_list"
+
+    def get_context_data(self, **kwargs):
+        context = super(ClienteDeleteView, self).get_context_data(**kwargs)
+        context["cliente"] = (
+            Cliente.objects.select_related("endereco")
+            .prefetch_related("dependente")
+            .get(id=self.kwargs["pk"])
+        )
+        return context
 
     def post(self, request, *args, **kwargs):
         cliente = Cliente.objects.get(id=kwargs["pk"])

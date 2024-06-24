@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load meus_filtros %}
+{% load humanize %}
+
+{% block content %}
+  <div class="container">
+    <nav class="nav">
+      <a class="nav-link" href="{% url 'clientes_form' %}">Novo</a>
+    </nav>
+<hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">data_nascimento</th>
+          <th scope="col">profissao</th>
+          <th scope="col">endereco</th>
+          <th scope="col">Dependente</th>
+          <th scope="col">Nivel</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cliente in object_list %}
+          <tr>
+            <th scope="row">{{ cliente.id }}</th>
+            <td>{{ cliente.data_nascimento }}</td>
+            <td>{{ cliente.profissao }}</td>
+            <td>{{ cliente.endereco.rua }}</td>
+            
+            <td>
+              {% for dependente in cliente.dependente.all %}
+                <li>{{ dependente.nome }}</li>
+              {% endfor %}
+            </td>
+            <td>{{ cliente.nivel }}</td>
+            <td>
+              <a class="btn btn-primary" href="{% url 'clientes_update' cliente.id %}">Editar</a>
+              <a class="btn btn-danger" href="{% url 'delete_clientes' cliente.id %}">Deletar</a>
+              <a class="btn btn-info" href="{% url 'form_dependente'%}">Dependentes</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

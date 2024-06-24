@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load meus_filtros %}
+{% load humanize %}
+
+{% block content %}
+  <div class="container">
+    <hr />
+    <h2>{{ cliente.nome }}</h2>
+    <hr />
+
+    <li>{{ cliente.nome }}</li>
+    <li>{{ cliente.email }}</li>
+    <li>{{ cliente.data_nascimento }}</li>
+    <li>{{ cliente.profissao }}</li>
+    <hr />
+    <a href="{% url 'clientes_update' cliente.id %}">Editar</a>
+    <a href="{% url 'clientes_list' %}">Voltar</a>
+  </div>
+{% endblock %}
