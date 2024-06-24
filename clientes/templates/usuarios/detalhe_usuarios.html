@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load meus_filtros %}
+{% load humanize %}
+
+{% block content %}
+  <div class="container">
+    <hr />
+    <h2>{{ usuario.username }}</h2>
+    <hr />
+
+    <li>{{ usuario.first_name }}</li>
+    <li>{{ usuario.last_name }}</li>
+    <hr />
+  </div>
+{% endblock %}

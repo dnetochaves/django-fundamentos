@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load meus_filtros %}
+{% load humanize %}
+
+{% block content %}
+  <div class="container">
+    <nav class="nav">
+      <a class="nav-link" href="{% url 'clientes_form' %}">Novo</a>
+    </nav>
+<hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Primeiro Nome</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for usuario in object_list %}
+          <tr>
+            <th scope="row">{{ usuario.id }}</th>
+            <th scope="row"><a href="{% url 'lista_usuario' usuario.id %}">{{ usuario.username }}</a></th>
+            <th scope="row">{{ usuario.email }}</th>
+            <th scope="row">{{ usuario.first_name }}</th>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

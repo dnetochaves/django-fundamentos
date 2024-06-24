@@ -1,0 +1,23 @@
+
+
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load meus_filtros %}
+{% load humanize %}
+
+{% block content %}
+<div class="container">
+    <hr>
+    <h2>Formulário de Usuario</h2>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>{{ usuario.username }}</h1>
+        {% bootstrap_form form %}
+        <hr>
+        <input class="btn btn-danger" type="submit" value="Excluir">
+       
+    </form>
+</div>
+{% endblock %}

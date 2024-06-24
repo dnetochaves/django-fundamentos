@@ -590,3 +590,33 @@ Quantas consultas seriam realizadas para obter todos os dados da relação, supo
 - [x] select_related`.
 - [ ] many_related`.
 <hr>  
+
+## Qual classe devemos herdar para adicionar mais campos ao form de edição de usuário?
+
+
+- [ ] UserUpdateForm.
+- [x] UserChangeForm.
+- [ ] ChangeForm.
+- [ ] UserCreationForm.
+- [ ] UserForm.
+<hr>  
+
+## Qual classe devemos herdar para adicionar mais campos ao form de cadastro de usuário?
+
+
+- [ ] UserForm.
+- [ ] UserNewForm.
+- [x] UserCreationForm.
+- [ ] Nenhuma das alterantivas.
+- [ ] CreationForm.
+<hr>  
+
+## Qual o nome do modelo padrão de autenticação do Django?
+
+
+- [ ] Usuario.
+- [x] User.
+- [ ] DjangoUser.
+- [ ] Protect.
+- [ ] Auth.
+<hr>  
